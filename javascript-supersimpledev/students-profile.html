@@ -21,8 +21,10 @@
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            row-gap: 10px;
+            row-gap: 30px;
             column-gap: 10px;
+            justify-items: center;
+            margin: 20px 40px;
         }
 
         .student {
@@ -76,38 +78,34 @@
     </div>
 
     <script>
-        const students = [
-            {
-                id: 'S001',
-                name: 'Hamim',
-                major: 'science',
-                status: 'dropped out'
-            },
-            {
-                id: 'S002',
-                name: 'Muti',
-                major: 'science',
-                status: 'Employed'
-            },
-            {
-                id: 'S003',
-                name: 'Rakib',
-                major: 'Arts',
-                status: 'Employed'
-            },
-            {
-                id: 'S004',
-                name: 'Dilla',
-                major: 'commerce',
-                status: 'Employed'
-            },
-            {
-                id: 'S005',
-                name: 'Ana',
-                major: 'science',
-                status: 'Uknown'
+        const students = [];
+
+        class Student {
+            constructor(id, name, major, status) {
+                this.id = id,
+                this.name = name,
+                this.major = major,
+                this.status = status
             }
-        ];
+        }
+
+        students.push(new Student('S001', 'Hamim', 'Science', 'Dropped out'));
+        students.push(new Student('S002', 'Muti', 'Science', 'Employed'));
+        students.push(new Student('S003', 'Tanti', 'Science', 'Studying'));
+        students.push(new Student('S004', 'Dilla', 'Science', 'Employed'));
+        students.push(new Student('S005', 'Ana', 'Science', 'unknown'));
+        students.push(new Student('S006', 'Rakib', 'Arts', 'Employed'));
+        students.push(new Student('S007', 'Pial', 'Arts', 'Graduated'));
+        students.push(new Student('S008', 'Sabit', 'Commerce', 'Failed'));
+        students.push(new Student('S009', 'Akash', 'Commerce', 'Failed'));
+        students.push(new Student('S010', 'Joy', 'Arts', 'Graduated'));
+        students.push(new Student('S011', 'David', 'Science', 'Failed'));
+        students.push(new Student('S012', 'Fred', 'Science', 'Failed'));
+        students.push(new Student('S013', 'Nat', 'Science', 'Married'));
+        students.push(new Student('S014', 'Jeff', 'Commerce', 'Billionare'));
+        students.push(new Student('S015', 'Elon', 'Science', 'Billionare'));
+        students.push(new Student('S016', 'Groot', 'Arts', 'unknown'));
+        students.push(new Student('S017', 'Thanos', 'Unknown', 'Dead'));
 
         const studentsProfile = document.querySelector('.js-students-profile-div');
 
