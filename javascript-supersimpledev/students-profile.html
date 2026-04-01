@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Profile</title>
+    <style>
+        body {
+            background-color: #efefefba;
+        }
+
+        .heading {
+            text-align: center;
+            font-size: 2em;
+            font-weight: 300;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .students-profile-div {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            row-gap: 10px;
+            column-gap: 10px;
+        }
+
+        .student {
+            background-color: #fff;
+            width: 200px;
+            border-radius: 10px;
+            transition: all 0.25s ease;
+
+            &:hover {
+                transform: translateY(-6px);
+                box-shadow: 0px 10px 30px #a4a4a4;
+            }
+        }
+
+        .student-picture-img {
+            width: 200px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .student-details {
+            display: flex;
+            flex-direction: column;
+            gap: 0px;
+        }
+
+        .student-id,
+        .student-name,
+        .student-major,
+        .student-status {
+            margin: 4px;
+        }
+
+        .student-id {
+            font-size: 1em;
+        }
+
+        .student-name,
+        .student-major,
+        .student-status {
+            font-size: 0.8em;
+            color: #565656;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="heading">Students Profile</h1>
+    <div class="students-profile-div js-students-profile-div">
+
+    </div>
+    </div>
+
+    <script>
+        const students = [
+            {
+                id: 'S001',
+                name: 'Hamim',
+                major: 'science',
+                status: 'dropped out'
+            },
+            {
+                id: 'S002',
+                name: 'Muti',
+                major: 'science',
+                status: 'Employed'
+            },
+            {
+                id: 'S003',
+                name: 'Rakib',
+                major: 'Arts',
+                status: 'Employed'
+            },
+            {
+                id: 'S004',
+                name: 'Dilla',
+                major: 'commerce',
+                status: 'Employed'
+            },
+            {
+                id: 'S005',
+                name: 'Ana',
+                major: 'science',
+                status: 'Uknown'
+            }
+        ];
+
+        const studentsProfile = document.querySelector('.js-students-profile-div');
+
+        function displayStudents() {
+            students.forEach((student) => {
+                studentsProfile.innerHTML += `
+                <div class="student">
+            <img src="/javascript-supersimpledev/assets/profile-avatar.jpg" alt="student" class="student-picture-img">
+            <div class="student-details">
+                <p class="student-id">ID: ${student.id}</p>
+                <p class="student-name">Name: ${student.name}</p>
+                <p class="student-major">Major: ${student.major}</p>
+                <p class="student-status">Status: ${student.status}</p>
+            </div>
+            `;;
+            });
+        }
+
+        displayStudents();
+    </script>
+</body>
+
+</html>
